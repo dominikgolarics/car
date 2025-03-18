@@ -17,7 +17,7 @@ class Car{
     }
 
     public function getCarByType($carType){
-        $query = "SELECT c_ID, c_desc, path, car_type.ct_desc FROM tbl_car INNER JOIN car_type ON car_type.ct_id = tbl_car.c_type WHERE car_type.ct_name = ?";
+        $query = "SELECT c_ID, c_desc, path, car_type.ct_desc FROM tbl_car INNER JOIN car_type ON car_type.ct_id = tbl_car.c_type WHERE car_type.ct_desc = ?";
         return $this->db->executeSelectQuery($query, [$carType]);
     }
 
